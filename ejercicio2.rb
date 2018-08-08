@@ -1,12 +1,12 @@
 module Formula
-	def perimetro(largo, ancho)
-		p = largo*ancho
-		puts "El perimetro es #{p}"
+	def perimetro
+		p = 2 * (largo + ancho)
+		puts "Y el perimetro es #{p} cm"
 	end
 
-	def area(area)
-		a = area * area
-		puts "El area es #{a}"
+	def area
+		a = largo * ancho
+		puts "Su area es #{a}"
 	end
 end
 
@@ -21,7 +21,7 @@ class Rectangulo
 	end
 
 	def lados
-		puts "las medidas de las lados es #{ancho} y #{largo}"
+		puts "Las medidas de las lados del Rectangulo es #{largo} de largo y #{ancho} de ancho"
 	end
 end
 
@@ -35,12 +35,17 @@ class Cuadrado
 	end
 
 	def lados
-		puts "las medidas de las lados es es #{ancho} y #{largo}"
+		puts "Las medidas de las lados del Cuadrado es #{largo} de largo y #{ancho} de ancho"
 	end
 end
 
 
-r = Rectangulo.new(4,6)
+r = Rectangulo.new(3,8)
 puts r.lados
-puts r.area(7)
+puts r.area
+puts r.perimetro
 
+c = Cuadrado.new(8,8)
+puts c.lados
+puts c.area
+puts c.perimetro
