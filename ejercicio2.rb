@@ -13,11 +13,10 @@ end
 class Rectangulo
 	include Formula
 	attr_reader :largo, :ancho
-	@@a = 0
+	
 	def initialize(largo, ancho)
 		@largo = largo
 		@ancho = ancho
-		@@a = 0
 	end
 
 	def lados
