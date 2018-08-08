@@ -1,5 +1,5 @@
 class Alumno
-	alumnos
+#	alumnos
   def initialize(nombre, nota1, nota2, nota3, nota4)
     @nombre = nombre
     @nota1 = nota1
@@ -8,18 +8,18 @@ class Alumno
     @nota4 = nota4
   end
 
-  def read_file(archivo = 'notas.txt')
-	alumnos = []
-	data = []
-	File.open(archivo, 'r') { |file| data = file.readlines }
-	data.each do |alumno|
-	alumnos << Alumno.new(*alumno.split(', '))
-	end
-	print alumnos
+  def self.read_file(archivo = 'notas.txt')
+    file = File.open(archivo, "r")
+    data = file.readlines
+    file.close
+    alumnos = []
+    data.each do |alumno|
+        alumnos << Alumno.new(*alumno.split(', '))
+      end
+    alumnos
   end
 end
 
 
-a = Alumno.new.read_file()
-
-puts a
+alumnos = Alumno.read_file
+print alumnos
